@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <form method="post">
+        {% for cliente in object_list %}
+            <li>{{cliente.nome}}</li>
+            <li>{{cliente.data_nascimento}}</li>
+            <li>{{cliente.email}}</li>
+            <li>{{cliente.profissao}}</li>
+            <li><a href={% url "detalha_clientes" pk=cliente.id %}>Exibir</a></li>
+            <li><a href={% url "edita_clientes" pk=cliente.id %}>Editar</a></li>
+            <li><a href={% url "remove_clientes" pk=cliente.id %}>Remover</a></li>
+            <hr>
+        {%endfor%}
+    </form>
+</body>
+</html>

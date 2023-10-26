@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deetalhes do Cliente</title>
+    {% bootstrap_css %} {% bootstrap_javascript %}
+  </head>
+  <body>
+    <form method="post">
+      <h1>{{cliente.nome}}</h1>
+      <li>{{cliente.data_nascimento}}</li>
+      <li>{{cliente.email}}</li>
+      <li>{{cliente.profissao}}</li>
+    </form>
+  </body>
+</html>
